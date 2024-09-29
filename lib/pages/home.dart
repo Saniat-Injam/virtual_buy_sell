@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../custom_widgets/buttons.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -16,7 +17,6 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.grey[200],
 
       body: Padding(
-
         padding: const EdgeInsets.fromLTRB(12, 267, 12, 0),
 
         child: Column(
@@ -32,8 +32,7 @@ class _HomeState extends State<Home> {
                   ),
                 )
             ),
-            const SizedBox(height: 40),
-
+            const SizedBox(height: 30),
             const Padding(
               padding: EdgeInsets.only(left: 20),
               child: TextField(
@@ -56,73 +55,36 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
 
-            SizedBox(
-              height: 55,
-              width: 400,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  // style: ButtonStyle(
-                  //   backgroundColor: Colors.black,
-                  // ),
-                  child: const Text(
-                    "Sign in",
-                    style: TextStyle(
-                      fontSize: 20,
-                      letterSpacing: 1.0,
-                      color: Colors.blue,
-                    ),
-                  ),
-                ),
-              ),
+
+
+
+            const AppButtons(
+              textColor: Colors.white,
+              backgroundColor: Colors.black,
+              borderColor: Colors.black,
+              text: "Sign in",
+              heightSize: 50,
+              widthSize: 380,
             ),
-
             const SizedBox(height: 10),
-
-            SizedBox(
-              height: 55,
-              width: 400,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/create');
-                  },
-                  child: const Text(
-                    "Sign up",
-                    style: TextStyle(
-                      fontSize: 20,
-                      letterSpacing: 1.0,
-                      color: Colors.blue,
-                    ),
-                  ),
-                ),
-              ),
+            AppButtons(
+              textColor: Colors.white,
+              backgroundColor: Colors.grey.shade500,
+              borderColor: Colors.white,
+              text: "Sign up",
+              heightSize: 50,
+              widthSize: 380,
             ),
-
-
-
             const SizedBox(height: 10),
-
-
-            Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/forgot');
-                },
-                child: const Text(
-                  "Forgot password",
-                  style: TextStyle(
-                    fontSize: 20,
-                    letterSpacing: 1.0,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
+            const AppButtons(
+              textColor: Colors.black,
+              backgroundColor: Colors.white,
+              borderColor: Colors.white,
+              text: "Forgot password",
+              heightSize: 50,
+              widthSize: 380,
             ),
 
 
