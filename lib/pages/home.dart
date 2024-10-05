@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../custom_widgets/buttons.dart';
+import "package:virtual_buy_sell/custom_widgets/input_box.dart";
+import "package:virtual_buy_sell/custom_widgets/buttons.dart";
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -11,14 +12,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       backgroundColor: Colors.grey[200],
-
       body: Padding(
         padding: const EdgeInsets.fromLTRB(12, 267, 12, 0),
-
         child: Column(
           children: [
             const Padding(
@@ -30,70 +27,45 @@ class _HomeState extends State<Home> {
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
-                )
-            ),
+                )),
             const SizedBox(height: 30),
-            const Padding(
-              padding: EdgeInsets.only(left: 20),
-              child: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: "Email address or phone number"
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 10),
-            const Padding(
-              padding: EdgeInsets.only(left: 20),
-              child: TextField(
-
-                obscureText: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "Password",
-                ),
-              ),
-            ),
+            const InputBox(
+                textColor: Colors.black,
+                backgroundColor: Colors.grey,
+                borderColor: Colors.grey,
+                height: 50,
+                inputHintText: "Enter adress or phone number"),
             const SizedBox(height: 20),
-
-
-
-
+            const InputBox(
+                textColor: Colors.black,
+                backgroundColor: Colors.grey,
+                borderColor: Colors.grey,
+                height: 50,
+                inputHintText: "Password"),
+            const SizedBox(height: 20),
             const AppButtons(
-              textColor: Colors.white,
-              backgroundColor: Colors.black,
-              borderColor: Colors.black,
-              text: "Sign in",
-              heightSize: 50,
-              widthSize: 380,
-            ),
+                textColor: Colors.white,
+                backgroundColor: Colors.black,
+                borderColor: Colors.black,
+                text: "Sign in",
+                height: 50),
             const SizedBox(height: 10),
             AppButtons(
-              textColor: Colors.white,
-              backgroundColor: Colors.grey.shade500,
-              borderColor: Colors.white,
-              text: "Sign up",
-              heightSize: 50,
-              widthSize: 380,
-            ),
+                textColor: Colors.white,
+                backgroundColor: Colors.grey.shade500,
+                borderColor: Colors.white,
+                text: "Sign up",
+                height: 50),
             const SizedBox(height: 10),
             const AppButtons(
-              textColor: Colors.black,
-              backgroundColor: Colors.white,
-              borderColor: Colors.white,
-              text: "Forgot password",
-              heightSize: 50,
-              widthSize: 380,
-            ),
-
-
+                textColor: Colors.black,
+                backgroundColor: Colors.white,
+                borderColor: Colors.white,
+                text: "Forgot password",
+                height: 50)
           ],
         ),
       ),
-
-
-
     );
   }
 }
